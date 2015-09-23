@@ -1,13 +1,4 @@
-This folder structure should be suitable for starting a project that uses a database:
-
-* Fork this repo
-* Clone this repo
-* Run `bundle install` to install `active_record`
-* `rake generate:migration <NAME>` to create a migration (Don't include the `<` `>` in your name, it should also start with a capital)
-* `rake db:migrate` to run the migration and update the database
-* Create models in lib that subclass `ActiveRecord::Base`
-* ... ?
-* Profit
+##Normal Mode
 
 1.  How many users are there?
     User.count => 50
@@ -35,27 +26,39 @@ This folder structure should be suitable for starting a project that uses a data
 8.  How much was spent on books?
     Order.joins("INNER JOIN items ON orders.item_id = items.id").where("category LIKE ?", "%book%").sum("price * quantity")
 
+***ANSWER NOT DONE YET!!!***
+
 9.  Simulate buying an item by inserting a User for yourself and an Order for that User.
     User.create(first_name: "Mike", last_name: "Hughes", email: "hughes@mike.com")
     Order.create(user_id: (Order.count + 1), item_id:
 
-## Rundown
 
-```
-.
-├── Gemfile             # Details which gems are required by the project
-├── README.md           # This file
-├── Rakefile            # Defines `rake generate:migration` and `db:migrate`
-├── config
-│   └── database.yml    # Defines the database config (e.g. name of file)
-├── console.rb          # `ruby console.rb` starts `pry` with models loaded
-├── db
-│   ├── dev.sqlite3     # Default location of the database file
-│   ├── migrate         # Folder containing generated migrations
-│   └── setup.rb        # `require`ing this file sets up the db connection
-└── lib                 # Your ruby code (models, etc.) should go here
-    └── all.rb          # Require this file to auto-require _all_ `.rb` files in `lib`
-```
+
+## Hard Mode
+
+1. What item was ordered most often? Grossed the most money?
+Query -  
+Answer - 
+
+2. What user spent the most?
+Query -  
+Answer - 
+
+3. What were the top 3 highest grossing categories?
+Query -  
+Answer - 
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
